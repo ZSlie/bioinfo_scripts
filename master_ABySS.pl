@@ -8,9 +8,9 @@ use warnings;
 my $pe_file_path = "/homes/bjsco/iochromas/Project_SmithS_01_SOL/Sample_Iloxense_combined";
 my $single_file_path = "/homes/bjsco/iochromas/read";
 my $short_name = "Kmer_opt";
-my $contig_pairs = "";
-my $scaffold_pairs = "";
-my $num_threads = "80";
+my $contig_pairs = "10";
+my $scaffold_pairs = "10";
+my $num_threads = "64";
 
 my @number_array = (21, 31, 41, 51, 61, 71, 81, 91);
 #my @number_array = (53, 55, 57, 59, 63, 65, 67, 69);
