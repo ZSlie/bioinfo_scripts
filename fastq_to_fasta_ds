@@ -1,0 +1,42 @@
+#!/user/bin/perl
+
+use strict;
+use warnings;
+
+#takes a command line argument, wich is a file to process
+my $infile=$ARGV[0];
+
+#open the file for reading only, use the filehandle IN
+open(IN, "$infile");
+
+#start loop counter
+my $i=0;
+
+#start of while loop
+while(<IN>)
+{
+chomp;
+
+#if a line begins with '@' and $i equals 0
+if (/^\@/&&$i==0)
+{
+
+#replace line to change to '@' to '>'
+s/^\@/\>/;
+
+#print this line after changing the first character
+print "$_\n";
+}
+elsif($i==1)
+{
+
+#1 is after 0, prints line with the sequence
+print "$_\n";
+
+#resets the counter to -2 so that the next two quality lines will be skipped
+$i=-3
+}
+
+#adds 1 to the current value of $i each loop
+$i++;
+}
